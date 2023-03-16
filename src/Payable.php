@@ -89,7 +89,7 @@ trait Payable
      */
     public function removeCreditCard(CreditCard $creditCard): bool
     {
-        if ( ! $this->creditCards->contains($creditCard)) {
+        if (! $this->creditCards->contains($creditCard)) {
             throw new CardRemoveException('This card does not belong to member!');
         }
 
@@ -141,8 +141,7 @@ trait Payable
     public function isSubscribeTo(Plan $plan): bool
     {
         foreach ($this->subscriptions as $subscription) {
-            if ($subscription->plan == $plan)
-            {
+            if ($subscription->plan == $plan) {
                 return $subscription->next_charge_at > Carbon::today()->startOfDay();
             }
         }

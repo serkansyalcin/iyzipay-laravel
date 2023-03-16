@@ -3,7 +3,6 @@
 
 namespace Iyzico\IyzipayLaravel\Commands;
 
-
 use Iyzico\IyzipayLaravel\Events\SubscriptionCouldNotPaid;
 use Iyzico\IyzipayLaravel\Exceptions\Transaction\TransactionSaveException;
 use Iyzico\IyzipayLaravel\Models\Subscription;
@@ -36,8 +35,7 @@ class SubscriptionChargeCommand extends Command
         $subscriptions = Subscription::active()->get();
 
         $payables = collect();
-        foreach ($subscriptions as $subscription)
-        {
+        foreach ($subscriptions as $subscription) {
             $payables->push($subscription->owner);
         }
 

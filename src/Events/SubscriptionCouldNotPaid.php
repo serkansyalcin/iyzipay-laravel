@@ -16,5 +16,4 @@ class SubscriptionCouldNotPaid
     {
         $this->payable = $payable;
     }
-
 }
